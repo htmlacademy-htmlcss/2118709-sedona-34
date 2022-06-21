@@ -121,7 +121,7 @@ body {
 
 .product-card-button {
   width: 140px;
-  height: 37px;
+  min-height: 37px;
   padding: 9px 15px 8px;
   display: block;
   box-sizing: border-box;
@@ -141,13 +141,13 @@ body {
 .navigation {
   display: flex;
   margin: 0 auto;
-  height: 65px;
 
 }
 
 .navigation-logo {
   margin-left: 70px;
   margin-right: 30px;
+  line-height: 0;
 }
 
 .navigation-link {
@@ -164,6 +164,7 @@ body {
   width: 460px;
   margin: 0;
   padding: 0;
+  align-items: center;
 
 }
 
@@ -171,22 +172,25 @@ body {
   display: flex;
   width: 300px;
   margin-left: auto;
+  align-items: center;
 }
 
-.navigation-user .navigation-item {
+/* .navigation-user .navigation-item {
   min-height: 66px;
   min-width: 42px;
-}
+} */
 
 .navigation-user .navigation-link {
-  padding: 23px 12px;
+  /* padding: 23px 12px; */
+  min-height: 66px;
+  min-width: 42px;
   margin: 0;
+  padding: 0;
 }
 
 .button-navigation-link {
   display: block;
   padding: 9px 15px;
-  margin-top: 14px;
   margin-left: 20px;
   width: 130px;
 }
@@ -245,10 +249,12 @@ body {
 /*advantages-list*/
 .devil-bridge-img {
   display: block;
+  height: auto;
 }
 
 .real-town-img {
   display: block;
+  height: auto;
 
 }
 
@@ -418,16 +424,12 @@ body {
   width: 190px;
 }
 
-
-.social-item {
-  display: block;
+.social-item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-width: 48px;
   min-height: 40px;
-}
-
-.social-icon {
-  display: block;
-  margin: 0;
 }
 
 .contact-phone-number {
@@ -446,9 +448,6 @@ body {
   margin-right: auto;
 }
 
-.logo-academy {
-  display: block;
-}
 /* catalog */
 /*filter*/
 .filter {
@@ -604,6 +603,7 @@ body {
 .select-control-price {
   width: 290px;
   margin-right: 78px;
+  padding-left: 20px;
 }
 
 
@@ -650,15 +650,11 @@ body {
 
 .product-card {
   padding: 20px;
-  /* display: flex;
-  flex-wrap: wrap; */
   display: grid;
   grid-template-columns: 140px 140px;
   column-gap: 20px;
   row-gap: 16px;
   justify-self: start;
-
-
 }
 
 .product-card-link {
@@ -666,24 +662,20 @@ body {
   line-height: 28px;
   text-decoration: none;
   color: inherit;
-  /* margin-bottom: 16px; */
   grid-column: 1/-1;
 
 }
 
-.product-card-image{
+.product-card-image {
   display: block;
   margin-bottom: 16px;
-   /* margin-bottom: 16px; */
 }
 
 .product-card-item {
   font-size: 18px;
   line-height: 21px;
   color: #333333;
-  /* margin-right: 20px;
-  margin-bottom: 16px; */
-  width:140px;
+  width: 140px;
 }
 
 .product-card-price {
@@ -691,7 +683,7 @@ body {
   line-height: 21px;
   color: #333333;
   width: 140px;
-  /* margin-bottom: 16px; */
+
 
 }
 
@@ -701,19 +693,9 @@ body {
   padding-left: 23px;
   padding-right: 22px;
   margin: 0;
+  font-weight: 400;
 }
 
-/* .product-card-more{
-  margin-right: 20px;
-  margin-bottom: 16px;
-}
-
-.product-card-favorite{
-  margin-bottom: 16px;
-}
-.product-card-stars{
-  margin-right: 20px;
-} */
 
 /*pagination*/
 .pagination {
@@ -732,6 +714,7 @@ body {
 .pagination-container {
   display: flex;
   padding: 30px 71px 25px 73px;
+  align-items: center;
 }
 
 .pagination-link {
@@ -739,9 +722,9 @@ body {
   line-height: 36px;
   display: block;
   box-sizing: border-box;
-  width: 60px;
+  min-width: 60px;
   height: 60px;
-  padding: 12px 24px;
+  padding: 12px 10px;
 }
 
 .select-results {
@@ -750,19 +733,16 @@ body {
   color: #333333;
   width: 386px;
   height: 49px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  box-sizing: border-box;
-  margin: 0 auto;
-  align-self: center;
+  display: flex;
+  align-items: center;
 }
 
 .select-results .select-control {
   width: 160px;
-}
+  height: 49px;
+  margin-left: 51px;
+  padding-left: 20px;
 
-.results {
-  align-self: center;
 }
 
 /*subscribe-catalog*/
