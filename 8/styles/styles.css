@@ -245,10 +245,6 @@ body {
 
 /*header*/
 
-
-/* header ver 2 */
-
-
 .header {
   font-weight: 700;
   font-size: 20px;
@@ -305,6 +301,7 @@ body {
   width: 264px;
   margin-left: auto;
   align-items: center;
+  position: relative;
 }
 
 
@@ -314,8 +311,37 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
+}
+
+.navigation-user .navigation-item:nth-child(2)::after{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 66px;
+  top: 15px;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  background-color:#7DB54F;
+  content: "";
+}
+
+.number-for-icon{
+  position: absolute;
+  width: 19.05px;
+  height: 13px;
+  left: calc(50% - 19.05px/2 + 13px);
+  top: calc(50% - 13px/2 - 9px);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 13px;
+  text-align: center;
+  letter-spacing: -0.1em;
+  color: #FFFFFF;
+  z-index: 1;
 
 }
+
 .navigation-icon{
   position: absolute;
   top: 0;
@@ -326,14 +352,12 @@ body {
   fill:#000000;
 }
 
-
 .button-navigation-link {
   display: block;
   padding: 9px 15px;
   margin-left: 20px;
   width: 130px;
   border-radius: 4px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 
@@ -552,13 +576,17 @@ body {
   background-color: #F2F2F2;
   border: none;
   padding: 0;
-  padding-top: 20px;
-  padding-bottom: 19px;
   padding-left: 22px;
+  padding-right: 14px;
   border-radius: 10px 0 0 10px;
+  margin: 0;
+  font: inherit;
+  font-weight: 400;
 }
 
-::placeholder {
+
+
+.field::placeholder {
   font-family: inherit;
   font-size: 18px;
   line-height: 21px;
@@ -596,7 +624,7 @@ body {
 .social-item:hover svg{
   fill:#68A2CA;
 }
-.social-item:focus svg{
+.social-item:focus-within svg{
   fill:#68A2CA;
 }
 .social-item:active svg{
@@ -667,7 +695,6 @@ body {
   margin: 0;
   padding: 0;
   display: block;
-  margin-right: 565px;
   margin-bottom: 10px;
 
 }
@@ -676,14 +703,17 @@ body {
 
 .breadcrumbs {
   list-style: none;
-  margin: 0 947px 40px 2px;
+  margin: 0;
+  margin-bottom: 40px;
+  margin-left: 2px;
   display: flex;
   padding: 0;
-
+  flex-wrap: wrap;
+  line-height: 21px;
 }
 
 .breadcrumbs-item {
-  min-width: 12px;
+  min-width: 13px;
   position: relative;
 }
 
@@ -694,14 +724,32 @@ body {
 .breadcrumbs-link {
   color: inherit;
   font-size: 16px;
-  /* line-height: 21px; */
+  line-height: 21px;
   text-decoration: none;
+}
+.breadcrumbs-item:hover{
+  color: rgba(255, 255, 255, 0.6);
+}
+.breadcrumbs-item:hover svg{
+  fill: rgba(255, 255, 255, 0.6);
+}
+
+.breadcrumbs-item:first-child:focus-within{
+  outline: 2px solid #68A2CA;
+}
+
+.breadcrumbs-item:active{
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.breadcrumbs-item:nth-child(2){
   padding-left: 15px;
   background-image: url("../images/icons/arrow.svg");
   background-repeat: no-repeat;
   background-size: 6px 9px;
   background-position: center left;
 }
+
 
 .breadcrumbs-icon{
   fill: #F2F2F2;
@@ -723,6 +771,7 @@ body {
 .main-filter {
   display: flex;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .main-filter-list {
@@ -744,7 +793,6 @@ body {
 
 .filter-value {
   width: 287px;
-  margin-right: 70px;
 }
 
 .filter-buttons {
@@ -753,6 +801,7 @@ body {
   width: 160px;
   margin-top: 60px;
   align-items: center;
+  margin-left: auto;
 }
 
 
@@ -783,7 +832,6 @@ body {
   display: grid;
   grid-template-columns: 1fr auto;
   width: 287px;
-  box-sizing: border-box;
   margin: 0 auto;
 }
 
@@ -796,7 +844,9 @@ body {
   min-height: 48px;
   background-color: transparent;
   color: #FFFFFF;
+  box-sizing: border-box;
 }
+
 
 
 
@@ -807,7 +857,9 @@ body {
   display: flex;
   padding: 55px 71px 56px 72px;
 }
-
+.inner-header p{
+  align-self: center;
+}
 
 .catalog-result {
   font-size: 30px;
@@ -825,14 +877,11 @@ body {
   padding-left: 20px;
 }
 
-
-
 .select-control {
   font-family: inherit;
   font-size: 18px;
   line-height: 21px;
   color: #333333;
-
   appearance: none;
   background-image: url("../images/icons/arrow-down.svg");
   background-repeat: no-repeat;
@@ -841,6 +890,23 @@ body {
   border: 2px solid #E5E5E5;
   border-radius: 4px;
 }
+
+.select-control:hover{
+  border: 2px solid #68A2CA;
+}
+.select-control:focus{
+  outline:  2px solid #68A2CA;
+  border-color:transparent;
+}
+.select-control:active{
+  border: 2px solid #3F5E72;
+  outline: none;
+}
+.select-control:disabled{
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.3);
+}
+
 
 .catalog-view-list {
   list-style: none;
@@ -869,6 +935,7 @@ body {
   border: 2px solid #E5E5E5;
   background-color: #FFFFFF;
   border-radius: 4px;
+  box-sizing: border-box;
 }
 .card-grid-toggle-current{
   border: 2px solid #000000;
