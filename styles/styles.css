@@ -245,10 +245,6 @@ body {
 
 /*header*/
 
-
-/* header ver 2 */
-
-
 .header {
   font-weight: 700;
   font-size: 20px;
@@ -580,13 +576,17 @@ body {
   background-color: #F2F2F2;
   border: none;
   padding: 0;
-  padding-top: 20px;
-  padding-bottom: 19px;
   padding-left: 22px;
+  padding-right: 14px;
   border-radius: 10px 0 0 10px;
+  margin: 0;
+  font: inherit;
+  font-weight: 400;
 }
 
-::placeholder {
+
+
+.field::placeholder {
   font-family: inherit;
   font-size: 18px;
   line-height: 21px;
@@ -695,7 +695,6 @@ body {
   margin: 0;
   padding: 0;
   display: block;
-  margin-right: 565px;
   margin-bottom: 10px;
 
 }
@@ -728,8 +727,19 @@ body {
   line-height: 21px;
   text-decoration: none;
 }
-.breadcrumbs-item:focus-within{
+.breadcrumbs-item:hover{
+  color: rgba(255, 255, 255, 0.6);
+}
+.breadcrumbs-item:hover svg{
+  fill: rgba(255, 255, 255, 0.6);
+}
+
+.breadcrumbs-item:first-child:focus-within{
   outline: 2px solid #68A2CA;
+}
+
+.breadcrumbs-item:active{
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .breadcrumbs-item:nth-child(2){
@@ -761,6 +771,7 @@ body {
 .main-filter {
   display: flex;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .main-filter-list {
@@ -782,7 +793,6 @@ body {
 
 .filter-value {
   width: 287px;
-  margin-right: 70px;
 }
 
 .filter-buttons {
@@ -791,6 +801,7 @@ body {
   width: 160px;
   margin-top: 60px;
   align-items: center;
+  margin-left: auto;
 }
 
 
@@ -821,7 +832,6 @@ body {
   display: grid;
   grid-template-columns: 1fr auto;
   width: 287px;
-  box-sizing: border-box;
   margin: 0 auto;
 }
 
@@ -834,7 +844,9 @@ body {
   min-height: 48px;
   background-color: transparent;
   color: #FFFFFF;
+  box-sizing: border-box;
 }
+
 
 
 
@@ -865,8 +877,6 @@ body {
   padding-left: 20px;
 }
 
-
-
 .select-control {
   font-family: inherit;
   font-size: 18px;
@@ -891,6 +901,10 @@ body {
 .select-control:active{
   border: 2px solid #3F5E72;
   outline: none;
+}
+.select-control:disabled{
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.3);
 }
 
 
