@@ -939,9 +939,10 @@ body {
   bottom: 13px;
   left: 13px;
   background-image: url(../images/icons/minus-icon.svg);
-  background-size: 2px 14px;
+  background-size: 1px 14px;
   background-repeat: no-repeat;
   transform: rotate(90deg);
+  opacity: 0.3;
 }
 
 .button-plus::after{
@@ -956,9 +957,10 @@ body {
   top:12px;
   bottom: 13px;
   left: 13px;
-  background-image: url(../images/icons/plus-icon.svg);
+  background-image: url(../images/icons/icon-plus.svg);
   background-size: 14px 14px;
   background-repeat: no-repeat;
+  opacity: 0.3;
 }
 
 /* tooltip */
