@@ -1012,6 +1012,19 @@ body {
   display: none;
 }
 
+.tooltip-text:after {
+  content:"";
+  background-image: url("../images/icons/tooltip-triangle.svg");
+  width: 19px;
+  height: 9px;
+  position:absolute;
+  bottom: 100%;
+  left:0;
+  right:0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .tooltip-toggle:hover + .tooltip-text,
 .tooltip-toggle:focus + .tooltip-text {
   display: block;
