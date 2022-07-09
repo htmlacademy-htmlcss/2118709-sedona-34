@@ -684,7 +684,7 @@ body {
 .modal {
   position: relative;
   margin: auto;
-  padding: 70px;
+  padding: 62px 70px 70px;
   background-color: #ffffff;
   box-sizing: border-box;
 }
@@ -719,11 +719,10 @@ body {
   font-weight: 700;
   color: #000000;
   text-transform: uppercase;
+  margin-left: -2px;
 }
 
 .modal-search-form{
-  /* display: grid;
-  grid-template-columns: 155px 420px; */
   display: flex;
   flex-wrap: wrap;
 }
@@ -734,16 +733,10 @@ body {
   align-items: center;
   position: relative;
 }
-/* .search-form-date .form-label1{
-  position: relative;
-}
-
-.search-form-time .form-label2{
-  position: relative;
-} */
 .search-form-time{
   position: relative;
 }
+
 .error{
   line-height: 21px;
   font-size: 16px;
@@ -779,7 +772,8 @@ body {
   text-transform: capitalize;
 }
 
-.field-group .field{
+
+.field-date{
   border-radius: 4px;
   padding-top: 15px;
   padding-bottom: 14px;
@@ -802,6 +796,7 @@ body {
   display: grid;
   grid-template-columns: 97px 133px;
   align-items: center;
+  position: relative;
 }
 
 .search-submit{
@@ -825,28 +820,42 @@ body {
 }
 
 
-.search-form-kids .field::placeholder{
+/* .search-form-kids .field::placeholder{
   text-align: center;
   font-family: inherit;
   font-size: 18px;
   line-height: 21px;
-}
+} */
 
-.search-form-adult .field::placeholder{
+/* .search-form-adult .field::placeholder{
   text-align: center;
   font-family: inherit;
   font-size: 18px;
   line-height: 21px;
-}
-.search-form-adult .field{
+} */
+
+.field-number,
+.field-date{
   font-size: 18px;
-
+  line-height: 21px;
 }
 
-.modal-field{
+.field-number::placeholder,
+.field-date::placeholder{
+  color: #000000;
+}
+
+
+/* .modal-field{
   padding: 0;
   padding-left:40px ;
   padding-right:40px ;
+} */
+
+.field-number{
+  border-radius: 4px;
+  padding-top: 15px;
+  padding-bottom: 14px;
 }
 
 .field::-webkit-outer-spin-button,
@@ -868,16 +877,145 @@ body {
   width: 16px;
   height: 16px;
   border: none;
-  /* top: 18px; */
   right: 15px;
-  /* bottom: 17px; */
   bottom: 55px;
   cursor: pointer;
   padding: 15px;
   opacity: 0.3;
+  display: block;
 }
 
+.field-number-container{
+  display:grid;
+  grid-template-columns: 50px 33px 50px;
+}
 
+.field-number-button{
+  border:none;
+  margin:0;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+}
+
+.field-number{
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 0;
+  text-align: center;
+  outline: 0;
+  z-index: 1;
+}
+
+.button-plus{
+  border-radius: 0 4px 4px 0;
+  /* background-image: url(../images/icons/plus-icon.svg);
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: center; */
+}
+
+.button-minus{
+  border-radius: 4px 0 0 4px ;
+  /* background-image: url(../images/icons/minus-icon.svg);
+  background-size: 2px 14px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(90deg); */
+}
+
+.button-minus::after{
+  width: 25px;
+  height: 25px;
+  content: "";
+  border-radius: 4px;
+  background-color:transparent;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  background-position: center;
+  position: absolute;
+  top:12px;
+  bottom: 13px;
+  left: 13px;
+  background-image: url(../images/icons/minus-icon.svg);
+  background-size: 2px 14px;
+  background-repeat: no-repeat;
+  transform: rotate(90deg);
+}
+
+.button-plus::after{
+  width: 25px;
+  height: 25px;
+  content: "";
+  border-radius: 4px;
+  background-color:transparent;
+  z-index: 1;
+  background-position: center;
+  position: absolute;
+  top:12px;
+  bottom: 13px;
+  left: 13px;
+  background-image: url(../images/icons/plus-icon.svg);
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+}
+
+/* tooltip */
+
+.tooltip{
+  position: absolute;
+  margin-left: 5px;
+  margin-top: 3px;
+}
+.tooltip-toggle{
+  width: 25px;
+  height: 25px;
+  border:none;
+  border-radius: 50%;
+  margin:0;
+  padding: 0;
+  display: block;
+  box-sizing: border-box;
+  background-color: #83B3D3;
+  background-image: url(../images/icons/info-icon.svg);
+  background-size: 1px 9px;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* position: absolute;
+  top:14px;
+  left: 54px; */
+}
+
+.tooltip-toggle:hover{
+  background-color: #68A2CA;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.tooltip-text {
+  background-color: #333333;;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: normal;
+  text-transform: none;
+  padding: 15px 18px 18px 22px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  width: 256px;
+  position: absolute;
+  top: 100%;
+  margin-top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  display: none;
+}
+
+.tooltip-toggle:hover + .tooltip-text,
+.tooltip-toggle:focus + .tooltip-text {
+  display: block;
+}
 
 
 

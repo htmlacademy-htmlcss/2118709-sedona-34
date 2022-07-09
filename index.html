@@ -203,7 +203,7 @@
           <form class="modal-search-form" action="https://echo.htmlacademy.ru/" method="post">
             <p class="field-group search-form-date">
               <label class="form-label   " for="arrival-date">Дата заезда:</label>
-            <input class="field" type="text" id="arrival-date" name="arrival-date" placeholder="Укажите дату">
+            <input class="field field-date" type="text" id="arrival-date" name="arrival-date" placeholder="27 апреля 2020">
             <button class="modal-date-button">
               <span class="visually-hidden">Выбрать дату.</span>
             </button>
@@ -211,7 +211,7 @@
             </p>
             <p class="field-group search-form-time">
                 <label class="form-label " for="departure-date">Дата выезда:</label>
-              <input class="field" type="text" id="departure-time" name="departure-time" placeholder="Укажите дату">
+              <input class="field field-date" type="text" id="departure-time" name="departure-time" placeholder="1 сентября 2021">
               <button class="modal-date-button">
                 <span class="visually-hidden">Выбрать дату.</span>
               </button>
@@ -220,11 +220,35 @@
             <div class="modal-group-visitors">
               <p class="field-group search-form-adult">
                 <label class="form-label" for="search-adult">Взрослые:</label>
-              <input class="field" type="number" id="search-adult" name="search-adult" placeholder="2">
+                <span class="field-number-container">
+                  <button type="button" class="field-number-button button-minus">
+                    <span class="visually-hidden">Минус.</span>
+                  </button>
+                  <input class="field field-number" type="number" id="search-adult" name="search-adult" placeholder="2">
+                  <button type="button" class="field-number-button button-plus">
+                    <span class="visually-hidden">Плюс.</span>
+                  </button>
+                </span>
               </p>
+
               <p class="field-group search-form-kids">
-                <label class="form-label" for="search-kids"><span class="">Дети:</span></label>
-                <input class="field modal-field" type="number" id="search-kids" name="search-kids" placeholder="1">
+                <span class="form-label">
+                <label class="form-label" for="search-kids">Дети:</label>
+                <span class="tooltip">
+                  <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label">
+                  </button>
+                  <span class="tooltip-text" role="tooltip" id="tooltip-label">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</span>
+                </span>
+                </span>
+                <span class="field-number-container">
+                  <button type="button" class="field-number-button button-minus">
+                    <span class="visually-hidden">Минус.</span>
+                  </button>
+                  <input class="field field-number" type="number" id="search-kids" name="search-kids" placeholder="1">
+                  <button type="button" class="field-number-button button-plus">
+                    <span class="visually-hidden">Плюс.</span>
+                  </button>
+                </span>
               </p>
             </div>
             <button class="button search-submit" type="submit">Найти</button>
