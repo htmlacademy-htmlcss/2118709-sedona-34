@@ -404,13 +404,13 @@ img {
 .devil-bridge-img {
   display: block;
   height: auto;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .real-town-img {
   display: block;
   height: auto;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .advantages-main-list {
@@ -1533,6 +1533,7 @@ img {
   display: grid;
   grid-template-columns: repeat(3, 340px);
   column-gap: 18px;
+  align-items: flex-start;
 }
 
 .product-card {
