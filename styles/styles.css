@@ -404,11 +404,13 @@ img {
 .devil-bridge-img {
   display: block;
   height: auto;
+  object-fit: fill;
 }
 
 .real-town-img {
   display: block;
   height: auto;
+  object-fit: fill;
 }
 
 .advantages-main-list {
